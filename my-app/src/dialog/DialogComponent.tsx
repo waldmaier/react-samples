@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-// Define the type for props
 type DialogProps = {
   id: string;
 };
 
-const DialogComponent = ({id}: DialogProps) => {
+const DialogComponent = ({ id }: DialogProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const openDialog = (): void => {
@@ -23,11 +22,14 @@ const DialogComponent = ({id}: DialogProps) => {
 
       {/* Render the dialog only if isOpen is true */}
       {isOpen && (
-        <dialog id={id} open aria-hidden={!isOpen}>
-          <button onClick={closeDialog} autoFocus>
-            Close
-          </button>
-        </dialog>
+        <>
+          <div className="dialog-backdrop" onClick={closeDialog} />
+          <dialog id={id} open aria-hidden={!isOpen}>
+            <button onClick={closeDialog} autoFocus>
+              Close
+            </button>
+          </dialog>
+        </>
       )}
     </div>
   );
