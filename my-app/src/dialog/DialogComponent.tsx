@@ -20,7 +20,7 @@ function DialogComponent() {
 
       {/* Render the dialog only if isOpen is true */}
       {isOpen && (
-        <dialog open>
+        <dialog id={"my-test-id"} open>
           <h3>Dialog Title</h3>
           <p>This is a dialog box in React.</p>
           <button onClick={closeDialog}>Close</button>
