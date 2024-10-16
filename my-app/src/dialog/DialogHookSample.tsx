@@ -6,13 +6,12 @@ export const DialogHookSample = () => {
     <>
       <h3>Custom Content Inside Modal Hook</h3>
       <p>This is some dynamic content passed to the modal hook.</p>
-      <button>Close Modal Hook</button>
+      <button onClick={() => setIsOpen(false)}>Close Modal Hook</button>
     </>
   );
   return (
     <>
       <h2>React Dialog Example</h2>
-      <h1>My App</h1>
       <button onClick={() => setIsOpen(true)}>Open Dialog Hook 2</button>
       <Dialog/>
     </>
