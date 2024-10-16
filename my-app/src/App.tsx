@@ -8,9 +8,10 @@ function App() {
   console.log("app render " + isOpen)
   return (
     <div className="App">
+      <h2>React Dialog Example</h2>
       <button onClick={() => setIsOpen(true)}>Open Dialog in App</button>
 
-      <DialogComponent id="example-dialog" open={isOpen}>
+      <DialogComponent id="example-dialog" open={isOpen} backdropOnClick={() => setIsOpen(false)}>
         <h3>Custom Content Inside Modal</h3>
         <p>This is some dynamic content passed to the modal.</p>
         <button onClick={() => setIsOpen(false)}>Close</button>
