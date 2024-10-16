@@ -6,6 +6,7 @@ import {DialogHookSample} from "./dialog/DialogHookSample";
 function App() {
   return (
     <div className="App">
+      <h1>Here some Samples</h1>
       <DialogSample/>
       <DialogHookSample/>
     </div>
