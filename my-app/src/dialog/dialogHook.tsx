@@ -18,9 +18,6 @@ const useDialog = (id: string, children: ReactNode) => {
             <div>
               {children} {/* Render the passed content here */}
             </div>
-            <button onClick={closeDialog} autoFocus>
-              Close Dialog
-            </button>
           </dialog>
         </>
       )}

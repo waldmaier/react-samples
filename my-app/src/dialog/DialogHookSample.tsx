@@ -2,7 +2,13 @@ import React from 'react';
 import useDialog from "./dialogHook";
 
 export const DialogHookSample = () => {
-  const [Dialog, setIsOpen] = useDialog('my-dialog-hook', <p>This is the dialog content!</p>);
+  const [Dialog, setIsOpen] = useDialog('my-dialog-hook',
+    <>
+      <h3>Custom Content Inside Modal Hook</h3>
+      <p>This is some dynamic content passed to the modal hook.</p>
+      <button>Close Modal Hook</button>
+    </>
+  );
   return (
     <>
       <h2>React Dialog Example</h2>
