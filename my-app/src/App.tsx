@@ -6,7 +6,7 @@ import DialogComponent from "./dialog/DialogComponent";
 function App() {
   return (
     <div className="App">
-      <DialogComponent/>
+      <DialogComponent id={"mymymymy"}/>
     </div>
   );
 }

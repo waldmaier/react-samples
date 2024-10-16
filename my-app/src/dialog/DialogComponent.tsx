@@ -1,15 +1,18 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
-function DialogComponent() {
-  const [isOpen, setIsOpen] = useState(false); // State to control dialog visibility
+// Define the type for props
+type DialogProps = {
+  id: string;
+};
 
-  // Open the dialog by setting the state
-  const openDialog = () => {
+const DialogComponent = ({id}: DialogProps) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const openDialog = (): void => {
     setIsOpen(true);
   };
 
-  // Close the dialog and remove it from the DOM by setting the state
-  const closeDialog = () => {
+  const closeDialog = (): void => {
     setIsOpen(false);
   };
 
@@ -20,14 +23,14 @@ function DialogComponent() {
 
       {/* Render the dialog only if isOpen is true */}
       {isOpen && (
-        <dialog id={"my-test-id"} open>
-          <h3>Dialog Title</h3>
-          <p>This is a dialog box in React.</p>
-          <button onClick={closeDialog}>Close</button>
+        <dialog id={id} open aria-hidden={!isOpen}>
+          <button onClick={closeDialog} autoFocus>
+            Close
+          </button>
         </dialog>
       )}
     </div>
   );
-}
+};
 
 export default DialogComponent;
