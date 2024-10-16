@@ -27,7 +27,7 @@
 .App-link {
   color: #61dafb;
 }
-
+ /* modal dialog begin */
 .dialog-backdrop {
   position: fixed;
   top: 0;
@@ -37,10 +37,46 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
+
 dialog {
   z-index: 2;
   position: fixed;
+  padding: 0;
 }
+
+
+
+
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px; /* Fixed height for the header */
+  padding: 0 10px; /* Horizontal padding */
+  background: #f0f0f0; /* Background color for the header */
+  border-bottom: 1px solid #ccc; /* Optional border */
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px; /* Size of the close button */
+  cursor: pointer;
+  line-height: 30px; /* Center the cross vertically within the header */
+  padding-left: 10px;
+}
+
+.dialog-content {
+  padding: 20px; /* Padding for the dialog content */
+}
+
+.dialog-footer {
+  padding: 10px;
+  text-align: right; /* Align footer content to the right */
+}
+
+
+/*modal dialog end*/
 
 
 @keyframes App-logo-spin {

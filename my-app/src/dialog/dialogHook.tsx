@@ -1,7 +1,7 @@
 import React, {ReactNode, useState} from 'react';
 
 // Custom hook to manage a dialog's state
-const useDialog = (id: string, children: ReactNode) => {
+const useDialog = (id: string, title: string, children: ReactNode) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const closeDialog = (): void => {
@@ -15,7 +15,13 @@ const useDialog = (id: string, children: ReactNode) => {
         <>
           <div className="dialog-backdrop" onClick={closeDialog}/>
           <dialog id={id} open aria-hidden={!isOpen}>
-            <div>
+            <div className="dialog-header">
+              <h3>{title}</h3>
+              <button className="close-button" onClick={closeDialog} aria-label="Close dialog">
+                &times; {/* Cross symbol */}
+              </button>
+            </div>
+            <div className="dialog-content">
               {children} {/* Render the passed content here */}
             </div>
           </dialog>
